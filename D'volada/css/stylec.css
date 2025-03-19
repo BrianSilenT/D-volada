@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -230,4 +231,238 @@ footer {
     .menu ul li {
         margin: 10px 0;
     }
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    /* Colores */
+    --primary-color: #7C0B00;
+    --secondary-color: #d4680f;
+    --highlight-color: #FFD700;
+    --text-color:black;
+    --background-gradient: linear-gradient(to right, #1371e3, #1c8ed4, #2cd5de);
+    --whatsapp-gradient: linear-gradient(to right, #25D366, #128C7E);
+
+    /* Fuentes y tamaños */
+    --font-main: 'Arial', sans-serif;
+    --heading-color: rgb(1, 9, 15);
+    --font-size-heading: 3rem;
+    --font-size-subheading: 1.5rem;
+    --font-weight-bold: bold;
+
+    /* Bordes y sombras */
+    --border-radius: 10px;
+    --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Espaciado */
+    --padding-standard: 15px;
+    --gap-standard: 20px;
+}
+
+header {
+    background-color:var(--primary-color); /* Rojo oscuro */
+    padding:var(--padding-standard);
+    text-align: center;
+    box-shadow:var(--box-shadow-light);
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el menú */
+}
+.menu ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinea los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.menu ul li {
+    margin: 0; /* Quita márgenes adicionales */
+}
+
+.menu ul li a {
+    color:var(--text-color); /* Ajusta el color del texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1.4rem; /* Tamaño más grande del texto */
+    font-weight: bold; /* Resalta el texto */
+}
+.menu ul li a:hover {
+    color:var(--highlight-color); /* Color dorado al pasar el cursor */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7); /* Resalta la sombra al interactuar */
+}
+body{
+    background:var(--background-gradient);
+    color: var(--text-color, black); /* Color con variable de respaldo */
+    font-family:var(--font-main);
+    line-height: 1.6;
+}
+h1 {
+    color:var(--heading-color); /* Mantiene tu color original */
+    text-align: center;
+    font-size:var(--font-size-heading); /* Incrementa el tamaño del texto */
+    font-weight:var(--font-weight-bold); /* Hace que el texto resalte más */
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidad */
+}
+#restaurants{
+    display: flex;
+    justify-content: center;
+}
+.restaurant-option {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 20px;
+    flex-wrap: wrap; /* Permite que las opciones se ajusten en pantallas pequeñas */
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #d4680f; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.restaurant-option:hover {
+    transform: translateY(-5px); /* Sutil elevación al pasar el cursor */
+}
+
+.service-option h2{
+    font-family:var(--font-main);
+    color: #13161a; /* Gris oscuro para contraste */
+    font-size:var(--font-size-subheading);
+    margin: 10px 0;
+}
+
+
+.menu-imagenes{
+    width: 300px;
+    height: auto;
+    border-radius:var(--border-radius);
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición para clic */
+}
+.menu-imagenes:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow:var(--box-shadow-hover); /* Sombra elegante */
+}
+
+.menu-imagenes:active {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-hover);
+}
+
+#lightbox.hidden {
+    pointer-events: none; /* No interactuable cuando está oculto */
+}
+
+#lightbox.visible {
+    opacity: 1; /* Mostrar cuando se activa */
+    pointer-events: auto;
+}
+
+
+#contacto {
+    background:var(--whatsapp-gradient); /* Degradado en tonos de WhatsApp */
+    color:var(--text-color); /* Texto en blanco */
+    text-align: center;
+    padding: 30px;
+    border-radius:var(--border-radius); /* Bordes redondeados */
+    margin-top: 20px;
+    box-shadow:var(--box-shadow-hover); /* Sombra para profundidad */
+}
+
+#contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+}
+
+#contacto p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+#contacto a {
+    background-color: #25D366; /* Verde WhatsApp */
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contacto a:hover {
+    background-color: #128C7E; /* Cambia a un verde más oscuro */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+#contacto img {
+    margin-top: 15px;
+    width: 100px; /* Aumenta el tamaño del ícono */
+    height: auto;
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+#contacto img:hover {
+    transform: scale(1.2); /* Agranda el ícono al pasar el cursor */
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    background-color: #3B3B3B; /* Gris cálido */
+    color: #FFFFFF; /* Texto blanco */
+    padding: 20px 0;
+}
+
+
+@media (max-width: 768px) {
+    .servicios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+>>>>>>> a26ac8f (se enlza repositorio)
 }
